@@ -1,73 +1,273 @@
- <meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Yuehao Hu</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
+    :root {
+      --bg: #f6f8fb;
+      --card: rgba(255, 255, 255, 0.85);
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #2563eb;
+      --accent-dark: #1d4ed8;
+      --border: rgba(37, 99, 235, 0.12);
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
     }
-    .header {
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, #dbeafe 0, transparent 30%),
+        radial-gradient(circle at top right, #e0e7ff 0, transparent 28%),
+        var(--bg);
+      line-height: 1.7;
+    }
+
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+
+    .hero {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 28px;
+      padding: 28px;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
     }
-    .header img {
-      width: 150px;
+
+    .hero img {
+      width: 168px;
+      height: 168px;
+      object-fit: cover;
       border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.12);
+      flex-shrink: 0;
     }
+
     h1 {
-      margin-bottom: 5px;
+      margin: 0 0 8px;
+      font-size: 2.3rem;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
     }
-    .section {
-      margin-top: 30px;
+
+    .subtitle {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 1.02rem;
     }
-    a {
-      color: #0366d6;
+
+    .links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+
+    .icon-link {
+      width: 46px;
+      height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+      color: var(--text);
+      text-decoration: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .icon-link:hover {
+      transform: translateY(-2px);
+      border-color: rgba(37, 99, 235, 0.24);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
       text-decoration: none;
     }
+
+    .icon-link svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    .section {
+      margin-top: 26px;
+      padding: 24px 28px;
+      background: var(--card);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: -0.01em;
+    }
+
+    p, li {
+      color: #334155;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     a:hover {
+      color: var(--accent-dark);
       text-decoration: underline;
+    }
+
+    .pub-title {
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .project-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .project-item {
+      padding: 16px 18px;
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.75);
+    }
+
+    .project-name {
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: inline-block;
+    }
+
+    .project-meta {
+      color: #64748b;
+      margin: 0;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .links {
+        justify-content: center;
+      }
+
+      .section {
+        padding: 20px;
+      }
+
+      .hero img {
+        width: 140px;
+        height: 140px;
+      }
     }
   </style>
 </head>
 
 <body>
+  <div class="container">
+    <div class="hero">
+      <img src="photo.jpg" alt="Yuehao Hu" />
+      <div>
+        <h1>Yuehao Hu</h1>
+        <p class="subtitle">
+          MSc Student in Computing Science<br />
+          Simon Fraser University<br />
+          Email: yuehao_hu@sfu.ca
+        </p>
 
-  <div class="header">
-    <img src="photo.jpg" alt="Your Photo">
-    <div>
-      <h1>Yuehao Hu</h1>
+        <div class="links" aria-label="Social links">
+          <a class="icon-link" href="cv.pdf" target="_blank" rel="noopener noreferrer" aria-label="CV" title="CV">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5Zm1 7V3.5L19.5 9H15Zm-2 1.5 1.5 3.5h-1.4l-.3-.9h-1.4l-.3.9H9.7L11.2 10.5h1.8Zm-1.35 1.7h.9l-.45-1.25-.45 1.25ZM8 10h1.4l1 2.2L11.4 10h1.4l-1.9 4H9.9L8 10Zm6.5 8h-7v-1.5h7V18Zm0-2.5h-7V14h7v1.5Z"/>
+            </svg>
+          </a>
+
+          <a class="icon-link" href="https://github.com/yuehaohu" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.54 2.87 8.39 6.84 9.75.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.12-1.49-1.12-1.49-.92-.64.07-.63.07-.63 1.02.07 1.56 1.07 1.56 1.07.9 1.58 2.36 1.12 2.93.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.04 1.03-2.76-.1-.27-.45-1.36.1-2.83 0 0 .84-.27 2.75 1.05A9.2 9.2 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.47.2 2.56.1 2.83.64.72 1.03 1.64 1.03 2.76 0 3.94-2.34 4.81-4.57 5.06.36.32.69.96.69 1.94 0 1.4-.01 2.52-.01 2.87 0 .26.18.58.69.48A10.06 10.06 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/>
+            </svg>
+          </a>
+
+          <a class="icon-link" href="https://www.linkedin.com/in/yuehao-hu-1922a336a" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.06-1.86-3.06-1.86 0-2.15 1.45-2.15 2.96v5.67H9.32V9h3.42v1.56h.05c.48-.9 1.66-1.86 3.42-1.86 3.66 0 4.34 2.41 4.34 5.54v6.21ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM3.56 20.45h3.56V9H3.56v11.45Z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>About Me</h2>
       <p>
-        MSc Student in Computing Science <br>
-        Simon Fraser University <br>
-        Email: yuehao_hu@sfu.ca
-      </p>
-      <p>
-        <a href="cv.pdf">CV </a> |
-        <a href="https://github.com/yuehaohu">GitHub</a> |
-        <a href="https://www.linkedin.com/in/yuehao-hu-1922a336a">LinkedIn</a>
+        I’m a Master’s student in Computing Science at Simon Fraser University, advised by
+        <a href="https://www.cs.sfu.ca/~keval/" target="_blank" rel="noopener noreferrer">Dr. Keval Vora</a>.
+        My research focuses on disaggregated memory, particularly RDMA-based synchronization techniques.
+        Prior to graduate school, I was a Senior Software Engineer at Enmotech, where I worked on distributed
+        storage systems. I also have experience in embedded systems, including Ethernet switches and industrial
+        motion controllers.
       </p>
     </div>
-  </div>
 
-  <div class="section">
-    <h2>About Me</h2>
-    <p>
-      I’m a Master’s student in Computing Science at Simon Fraser University, advised by <a href="https://www.cs.sfu.ca/~keval/">Dr. Keval Vora</a>. My research focuses on disaggregated memory, particularly RDMA-based synchronization techniques. Prior to graduate school, I was a Senior Software Engineer at Enmotech, where I worked on distributed storage systems. I also have experience in embedded systems, including Ethernet switches and industrial motion controllers.
-    </p>
-  </div>
+    <div class="section">
+      <h2>Publications</h2>
+      <ul>
+        <li>
+          <span class="pub-title">
+            <strong>FARLock: Asymmetric RDMA Locking Made Fair.</strong>
+            <span style="color: #dc2626;">(to appear)</span>
+          </span><br />
+          <strong>Yuehao Hu</strong>, Jiatang Zhou, Tianzheng Wang, and Keval Vora<br />
+          <a href="https://www.usenix.org/conference/osdi26" target="_blank" rel="noopener noreferrer">OSDI 2026</a>
+        </li>
+      </ul>
+    </div>
 
-  <div class="section">
-    <h2>Publications</h2>
-    <ul>
-      <li>
-        <strong>FARLock: Asymmetric RDMA Locking Made Fair. <span style="color: red;">(to appear)</span></strong><br>
-        <strong>Yuehao Hu</strong>, Jiatang Zhou, Tianzheng Wang, and Keval Vora<br>
-        <a href="https://www.usenix.org/conference/osdi26">OSDI 2026</a>
-      </li>
-    </ul>
+    <div class="section">
+      <h2>Projects</h2>
+      <ul class="project-list">
+        <li class="project-item">
+          <a class="project-name" href="https://en.enmotech.com/products/zStorage" target="_blank" rel="noopener noreferrer">
+            zStorage
+          </a>
+          <p class="project-meta">
+            A high-performance distributed storage system optimized for database workloads.
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
 </body>
 </html>
